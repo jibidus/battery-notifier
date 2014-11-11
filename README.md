@@ -23,7 +23,9 @@ cd battery-notifier-1.0
 ```
 
 # TODO
-- Test ~/Library/LaunchAgents exists and is a folder
+- Replace touch helloworld by the real script
+- Create tag 1.0.1
+- Installation: check agent is not already running
 - Complete this README.md
 - Manage translation
 - Add (unit) tests in bash?
