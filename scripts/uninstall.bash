@@ -1,8 +1,14 @@
 #!/bin/sh
 
-agent_plist=com.jibidus.batteryNotifier.plist
+plist_filename=com.jibidus.batteryNotifier.plist
+script_filename=battery-notifier.bash
 
-launchctl unload ~/Library/LaunchAgents/$agent_plist &&
-rm ~/Library/LaunchAgents/$agent_plist &&
-sudo gem uninstall terminal-notifier &&
-echo Battery notifier successfully uninslled.
+agents_folder=~/Library/LaunchAgents
+scripts_folder=~/Library/Scripts/battery-notifier
+
+launchctl unload $agents_folder/$plist_filename &&
+rm -Rf $scripts_folder &&
+rm $agents_folder/$plist_filename &&
+sudo gem uninstall terminal-notifier -x &&
+
+echo "Battery-notifier successfully uninslled."

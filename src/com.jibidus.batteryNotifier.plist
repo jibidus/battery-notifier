@@ -6,9 +6,13 @@
 		<string>com.jibidus.battery.notifier</string>
 		<key>ProgramArguments</key>
 		<array>
-			<string>touch</string>
-			<string>/tmp/helloworld</string>
+			<string>/bin/bash</string>
+			<string>${script_folder}/battery-notifier.bash</string>
 		</array>
+		
+		<key>StandardOutPath</key>
+		<string>${script_folder}/logs/battery-notifier.log</string>
+		
 		<key>StartInterval</key>
 		<!-- In seconds -->
 		<integer>60</integer>

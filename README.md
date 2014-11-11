@@ -23,9 +23,10 @@ cd battery-notifier-1.0
 ```
 
 # TODO
-- Replace touch helloworld by the real script
 - Create tag 1.0.1
 - Installation: check agent is not already running
+- Uninstallation: terminal-notifier can be used by another program!! Do not uninstall it like that.
+- Optimize performances
 - Complete this README.md
 - Manage translation
 - Add (unit) tests in bash?

@@ -1,12 +1,26 @@
 #!/bin/sh
 
-agent_plist=com.jibidus.batteryNotifier.plist
-agents_folder=~/Library/LaunchAgents
+plist_filename=com.jibidus.batteryNotifier.plist
+script_filename=battery-notifier.bash
 
+agents_folder=$HOME/Library/LaunchAgents
+scripts_folder=$HOME/Library/Scripts/battery-notifier
+
+echo "Installing dependencies (might take a while)..." &&
 sudo gem install terminal-notifier &&
 
-[ -d $agents_folder ] || mkdir $agents_folder &&
-cp src/$agent_plist $agents_folder &&
+echo "Installing script..." &&
+[ -d $scripts_folder/logs ] || mkdir -p $scripts_folder/logs &&
+cp src/$script_filename $scripts_folder/$script_filename &&
 
-launchctl load $agents_folder/$agent_plist &&
-echo Battery notifier successfully installed.
+echo "Installing agent..." &&
+[ -d $agents_folder ] || mkdir -p $agents_folder &&
+cp src/$plist_filename $agents_folder/$plist_filename &&
+
+echo "Configuring agent..." &&
+sed -i "" -e "s#\${script_folder}#$scripts_folder#g" $agents_folder/$plist_filename &&
+
+echo "Starting agent..." &&
+launchctl load $agents_folder/$plist_filename &&
+
+echo "Battery-notifier successfully installed."

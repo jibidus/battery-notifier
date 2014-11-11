@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo ""
+echo "$(date) --- New execution of battery-notifier"
+
 # return 0 to enable verbose mode
 is_verbose() {
 	return 0
@@ -11,7 +14,8 @@ get_battery_property() {
 
 
 send_notification() {
-	terminal-notifier -message "$1" -title "Battery Notifier" -sound default
+	#terminal-notifier -message "$1" -title "Battery Notifier" -sound default
+	echo "Send notification !"
 }
 
 # Configuration ---------------------------
@@ -20,7 +24,7 @@ FLAG_battery_under_high_threshold=/tmp/battery_under_high_threshold.flag
 HIGH_THRESHOLD=100
 $(is_verbose) && echo "High threshold defined: $HIGH_THRESHOLD"
 
-FLAG_battery_upper_low_threshold=/tmp/charge_upper_low_threshold.flag
+FLAG_battery_upper_low_threshold=/tmp/battery_upper_low_threshold.flag
 LOW_THRESHOLD=5
 $(is_verbose) && echo "Low threshold defined: $LOW_THRESHOLD"
 
