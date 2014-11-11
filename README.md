@@ -5,7 +5,22 @@ TODO
 - MacOSX 10.10 (Yosmite)
 
 # Installation
-TODO
+- Execute following commands in terminal (you may need to enter your password):
+```bash
+curl -Lk https://github.com/jibidus/battery-notifier/archive/1.0.zip -o battery-notifier-1.0.zip
+unzip battery-notifier-1.0.zip
+cd battery-notifier-1.0
+. scripts/install.bash
+```
+
+# Uninstallation
+- Execute following commands in terminal:
+```bash
+curl -Lk https://github.com/jibidus/battery-notifier/archive/1.0.zip -o battery-notifier-1.0.zip
+unzip battery-notifier-1.0.zip
+cd battery-notifier-1.0
+. scripts/uninstall.bash
+```
 
 # TODO
 - Complete this README.md
