@@ -11,6 +11,6 @@
 		</array>
 		<key>StartInterval</key>
 		<!-- In seconds -->
-		<integer>10</integer>
+		<integer>60</integer>
 	</dict>
 </plist>

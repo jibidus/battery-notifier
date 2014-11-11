@@ -23,6 +23,7 @@ cd battery-notifier-1.0
 ```
 
 # TODO
+- Test ~/Library/LaunchAgents exists and is a folder
 - Complete this README.md
 - Manage translation
 - Add (unit) tests in bash?
