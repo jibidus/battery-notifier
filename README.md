@@ -1,3 +1,12 @@
+# Description
+TODO
+
+# Requirements
+- MacOSX 10.10 (Yosmite)
+
+# Installation
+TODO
+
 # TODO
 - Complete this README.md
 - Manage translation
@@ -6,12 +15,6 @@
 - Create admin window in General Settings
 - Make threshold parametreables
 - Publish application in AppStore?
-
-# Description
-TODO
-
-# Requirements
-- MacOSX 10.10 (Yosmite)
 
 # External documentation
 - [Create Mac daemon](https://developer.apple.com/library/mac/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html)
@@ -25,3 +28,4 @@ TODO
 		ExternalChargeCapable = Yes|No
 		MaxCapacity
 		CurrentCapacity
+		
