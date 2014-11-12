@@ -1,4 +1,5 @@
 #!/bin/sh
+set -u -e
 
 plist_filename=com.jibidus.batteryNotifier.plist
 script_filename=battery-notifier.bash

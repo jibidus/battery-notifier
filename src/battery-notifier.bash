@@ -1,4 +1,6 @@
 #!/bin/bash
+set -u # Exit if an unbound variable is used
+set -e # Exit on first error
 
 echo ""
 echo "$(date) --- New execution of battery-notifier"
