@@ -16,8 +16,7 @@ get_battery_property() {
 
 
 send_notification() {
-	#terminal-notifier -message "$1" -title "Battery Notifier" -sound default
-	echo "Send notification !"
+	terminal-notifier -message "$2" -title "$1" -sound default
 }
 
 # Configuration ---------------------------
@@ -46,7 +45,7 @@ if [ $(get_battery_property "ExternalChargeCapable") == "No" ]; then
 		# Previously upper than low threshold
 		if [ "$current_charge" -le "$LOW_THRESHOLD" ]; then
 			# Now lower than threshold
-			send_notification "Batterie is up to $LOW_THRESHOLD%"
+			send_notification "Batterie faible" "Branchez votre MacBook sur secteur rapidement."
 			rm $FLAG_battery_upper_low_threshold  && $(is_verbose) && echo "Flag upper_low_threshold removed"
 		fi
 	else
@@ -61,7 +60,7 @@ else
 		# Previously lower than high threshold
 		if [ "$current_charge" -ge "$HIGH_THRESHOLD" ]; then
 			# Now greater than threshold
-			send_notification "Batterie is up to $HIGH_THRESHOLD%"
+			send_notification "Batterie rechargée" "Vous pouvez débrancher le chargeur de votre MacBook."
 			rm $FLAG_battery_under_high_threshold  && $(is_verbose) && echo "Flag under_high_threshold removed"
 		fi
 	else
