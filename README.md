@@ -1,5 +1,6 @@
 # Description
-TODO
+Battery-notifier 
+This tool runs as a service scheduled every minutes.
 
 # Requirements
 - MacOSX 10.10 (Yosmite)
@@ -26,10 +27,11 @@ cd battery-notifier-1.0
 - Create tag 1.0.1
 - Installation: check agent is not already running
 - Uninstallation: terminal-notifier can be used by another program!! Do not uninstall it like that.
+- Add (unit) tests in bash?
+- Create script to buidl new release (update README, commit, create tag and push)
 - Optimize performances
 - Complete this README.md
 - Manage translation
-- Add (unit) tests in bash?
 - Simplify installer (with real application)
 - Create admin window in General Settings
 - Make threshold parametreables
