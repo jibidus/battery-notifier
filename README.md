@@ -1,5 +1,5 @@
 # Description
-Battery-notifier can send notifications when battery capacity of your MacBook is lower than of upper than a given threshold.
+Battery-notifier can send notifications when battery capacity of your MacBook is lower than 5% or reaches 100%.
 Notifications are sent to Notification Center with playing a sound.
 This tool runs as a service scheduled every minutes.
 
@@ -28,7 +28,7 @@ cd battery-notifier-1.0.2 &&
 - Uninstallation: terminal-notifier can be used by another program!! Do not uninstall it like that.
 - Add (unit) tests in bash?
 - Create script to buidl new release (update README, commit, create tag and push)
-- Simplify installation procexx (curl
+- Create script for update
 - Rendre les seuil paramétrables
 - Optimize performances
 - Complete this README.md
