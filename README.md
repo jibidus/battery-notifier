@@ -9,18 +9,18 @@ This tool runs as a service scheduled every minutes.
 # Installation
 - Execute following commands in terminal (you may need to enter your password):
 ```bash
-curl -Lk https://github.com/jibidus/battery-notifier/archive/1.0.1.zip -o battery-notifier-1.0.1.zip &&
-unzip battery-notifier-1.0.1.zip &&
-cd battery-notifier-1.0.1 &&
+curl -Lk https://github.com/jibidus/battery-notifier/archive/1.0.2.zip -o battery-notifier-1.0.2.zip &&
+unzip battery-notifier-1.0.2.zip &&
+cd battery-notifier-1.0.2 &&
 . scripts/install.bash
 ```
 
 # Uninstallation
 - Execute following commands in terminal:
 ```bash
-curl -Lk https://github.com/jibidus/battery-notifier/archive/1.0.1.zip -o battery-notifier-1.0.1.zip &&
-unzip battery-notifier-1.0.1.zip &&
-cd battery-notifier-1.0.1 &&
+curl -Lk https://github.com/jibidus/battery-notifier/archive/1.0.2.zip -o battery-notifier-1.0.2.zip &&
+unzip battery-notifier-1.0.2.zip &&
+cd battery-notifier-1.0.2 &&
 . scripts/uninstall.bash
 ```
 
