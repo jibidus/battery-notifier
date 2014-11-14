@@ -10,6 +10,11 @@ scripts_folder=~/Library/Scripts/battery-notifier
 launchctl unload $agents_folder/$plist_filename 
 rm -Rf $scripts_folder 
 rm $agents_folder/$plist_filename 
-sudo gem uninstall terminal-notifier -x 
+
+echo "Uninstall tool terminal-notifier?"
+echo "This tool could be used by another program."
+read -p "[Y/N]" mustBeUninstalled
+# TODO Y, y, YES, Yes, yes...
+[ "$mustBeUninstalled" == "Y" ] && sudo gem uninstall terminal-notifier -x 
 
 echo "Battery-notifier successfully uninslled."

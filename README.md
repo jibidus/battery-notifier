@@ -26,7 +26,6 @@ cd battery-notifier-1.0 &&
 
 # TODO
 - Create tag 1.0.1
-- Uninstallation: terminal-notifier can be used by another program!! Do not uninstall it like that.
 - Add (unit) tests in bash?
 - Create script to buidl new release (update README, commit, create tag and push)
 - Simplify installation procexx (curl
