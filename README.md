@@ -1,5 +1,6 @@
 # Description
-Battery-notifier 
+Battery-notifier can send notifications when battery capacity of your MacBook is lower than of upper than a given threshold.
+Notifications are sent to Notification Center with playing a sound.
 This tool runs as a service scheduled every minutes.
 
 # Requirements
@@ -8,18 +9,18 @@ This tool runs as a service scheduled every minutes.
 # Installation
 - Execute following commands in terminal (you may need to enter your password):
 ```bash
-curl -Lk https://github.com/jibidus/battery-notifier/archive/1.0.zip -o battery-notifier-1.0.zip
-unzip battery-notifier-1.0.zip
-cd battery-notifier-1.0
+curl -Lk https://github.com/jibidus/battery-notifier/archive/1.0.zip -o battery-notifier-1.0.zip &&
+unzip battery-notifier-1.0.zip &&
+cd battery-notifier-1.0 &&
 . scripts/install.bash
 ```
 
 # Uninstallation
 - Execute following commands in terminal:
 ```bash
-curl -Lk https://github.com/jibidus/battery-notifier/archive/1.0.zip -o battery-notifier-1.0.zip
-unzip battery-notifier-1.0.zip
-cd battery-notifier-1.0
+curl -Lk https://github.com/jibidus/battery-notifier/archive/1.0.zip -o battery-notifier-1.0.zip &&
+unzip battery-notifier-1.0.zip &&
+cd battery-notifier-1.0 &&
 . scripts/uninstall.bash
 ```
 
@@ -29,6 +30,8 @@ cd battery-notifier-1.0
 - Uninstallation: terminal-notifier can be used by another program!! Do not uninstall it like that.
 - Add (unit) tests in bash?
 - Create script to buidl new release (update README, commit, create tag and push)
+- Simplify installation procexx (curl
+- Rendre les seuil paramétrables
 - Optimize performances
 - Complete this README.md
 - Manage translation
