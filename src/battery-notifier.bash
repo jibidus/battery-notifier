@@ -36,16 +36,17 @@ $(is_verbose) && echo "Max capacity : $max_capacity"
 current_capacity=$(get_battery_property "CurrentCapacity")
 $(is_verbose) && echo "Current capacity : $current_capacity"
 current_charge=$(expr 100 \* $current_capacity / $max_capacity)
-$(is_verbose) && echo "Current charge: $current_charge"
+$(is_verbose) && echo "Current charge: $current_charge%"
 
 if [ $(get_battery_property "ExternalChargeCapable") == "No" ]; then
+	$(is_verbose) && echo "This MacBook is on battery -> will check lower threshold."
 	rm -f $FLAG_battery_under_high_threshold
 	# On battery => check low threshold
 	if [ -f $FLAG_battery_upper_low_threshold ]; then
 		# Previously upper than low threshold
 		if [ "$current_charge" -le "$LOW_THRESHOLD" ]; then
 			# Now lower than threshold
-			send_notification "Batterie faible" "Branchez votre MacBook sur secteur rapidement."
+			send_notification "Batterie faible (< $LOW_THRESHOLD%)" "Branchez votre MacBook sur secteur rapidement."
 			rm $FLAG_battery_upper_low_threshold  && $(is_verbose) && echo "Flag upper_low_threshold removed"
 		fi
 	else
@@ -54,13 +55,14 @@ if [ $(get_battery_property "ExternalChargeCapable") == "No" ]; then
 		fi
 	fi
 else
+	$(is_verbose) && echo "This MacBook is on sector -> will check upper threshold."
 	rm -f $FLAG_battery_upper_low_threshold
 	# On sector => check high threshold
 	if [ -f $FLAG_battery_under_high_threshold ]; then
 		# Previously lower than high threshold
 		if [ "$current_charge" -ge "$HIGH_THRESHOLD" ]; then
 			# Now greater than threshold
-			send_notification "Batterie rechargée" "Vous pouvez débrancher le chargeur de votre MacBook."
+			send_notification "Batterie rechargée (>= $HIGH_THRESHOLD%)" "Vous pouvez débrancher le chargeur de votre MacBook."
 			rm $FLAG_battery_under_high_threshold  && $(is_verbose) && echo "Flag under_high_threshold removed"
 		fi
 	else
